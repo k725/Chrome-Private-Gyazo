@@ -1,0 +1,12 @@
+{
+	"extentionName": {
+		"message": "Gyazo mock"
+	},
+	"extentionShortName": {
+		"message": "GyazoMock"
+	},
+	"extentionDescription": {
+		"message": "Easy image upload the Gyazo compatible server."
+	}
+
+}

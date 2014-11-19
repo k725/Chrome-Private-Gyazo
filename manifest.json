@@ -1,0 +1,46 @@
+{
+	"manifest_version": 2,
+	"version": "0.1",
+	"name": "__MSG_extentionName__",
+	"short_name": "__MSG_extentionShortName__",
+	"description": "__MSG_extentionDescription__",
+	"author": "k725",
+	"default_locale": "en",
+	"browser_action": {
+		"default_icon": {
+			"19": "icons/icon_19.png",
+			"38": "icons/icon_96.png"
+		},
+		"default_title": "__MSG_extentionShortName__",
+		"default_popup": "popup/popup.html"
+	},
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["main/content.js"],
+		"run_at": "document_end"
+	}],
+	"background": {
+		"scripts": [
+			"main/background.js"
+		],
+		"persistent": false
+	},
+	"icons": {
+		"16": "icons/icon_16.png",
+		"32": "icons/icon_32.png",
+		"48": "icons/icon_48.png",
+		"96": "icons/icon_96.png",
+		"128": "icons/icon_128.png",
+		"256": "icons/icon_256.png"
+	},
+	"permissions": [
+		"<all_urls>",
+		"notifications",
+		"contextMenus",
+		"tabs",
+		"clipboardWrite",
+		"clipboardRead"
+	],
+	"options_page": "options/options.html",
+	"web_accessible_resources": ["jquery-2.1.1.min.map"]
+}

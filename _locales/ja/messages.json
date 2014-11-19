@@ -1,0 +1,11 @@
+{
+	"extentionName": {
+		"message": "Gyazoもどき"
+	},
+	"extentionShortName": {
+		"message": "GyazoModoki"
+	},
+	"extentionDescription": {
+		"message": "Gyazo互換サーバに画像を簡単アップロード。"
+	}
+}
