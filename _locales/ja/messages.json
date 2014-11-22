@@ -7,5 +7,77 @@
 	},
 	"extentionDescription": {
 		"message": "Gyazo互換サーバに画像を簡単アップロード。"
+	},
+	"captureCrop": {
+		"message": "範囲指定をキャプチャ"
+	},
+	"capturePage": {
+		"message": "ページ全体をキャプチャ"
+	},
+	"captureImage": {
+		"message": "この画像をアップロード"
+	},
+	"optionsTitle": {
+		"message": "設定"
+	},
+	"optionsTitleDescription": {
+		"message": "アップロード先サーバの設定や、アップロード後の挙動を設定します。"
+	},
+	"optionsServer": {
+		"message": "サーバ設定"
+	},
+	"optionsServerDescription": {
+		"message": "アップロード先URLやユーザ名、パスワード等の設定します。"
+	},
+	"optionsServerUploadUrl": {
+		"message": "アップロードURL"
+	},
+	"optionsServerUsername": {
+		"message": "ユーザ名"
+	},
+	"optionsServerPassword": {
+		"message": "パスワード"
+	},
+	"optionsServerApiKey": {
+		"message": "APIキー"
+	},
+	"optionOther": {
+		"message": "その他設定"
+	},
+	"optionOtherDescription": {
+		"message": "タブの挙動やクリップボードの挙動の設定します。"
+	},
+	"optionOtherClipCopyDescription": {
+		"message": "アップロード完了時のクリップボードの挙動"
+	},
+	"optionOtherClipCopy": {
+		"message": "アップロード完了後、URLをクリップボードにコピー"
+	},
+	"optionOtherUploadCompTabDescription": {
+		"message": "アップロード完了時のタブの挙動"
+	},
+	"optionOtherUploadCompTabNewBackground": {
+		"message": "新しいタブをバックグラウンドで開く"
+	},
+	"optionOtherUploadCompTabNewRightBackground": {
+		"message": "新しいタブを現在のタブの右にバックグラウンドで開く"
+	},
+	"optionOtherUploadCompTabNewOpen": {
+		"message": "新しいタブを開き移動する"
+	},
+	"optionOtherUploadCompTabNewRightOpen": {
+		"message": "新しいタブを現在のタブの右に開き移動する"
+	},
+	"optionOtherUploadCompTabNoAction": {
+		"message": "何もしない"
+	},
+	"optionsSave": {
+		"message": "保存"
+	},
+	"optionsReset": {
+		"message": "初期化"
+	},
+	"optionResetConfirm": {
+		"message": "保存されている設定値を全て破棄します。よろしいですか?"
 	}
 }

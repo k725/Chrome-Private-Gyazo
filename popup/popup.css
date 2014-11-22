@@ -1,0 +1,21 @@
+html, body {
+	width: 250px;
+	padding: 0px;
+	margin: 0px;
+}
+
+div.button {
+	cursor: pointer;
+	font-size: 17px;
+	line-height: 30px;
+	height: 30px;
+}
+
+div.button:hover {
+	background-color: #e6e6e6;
+}
+
+.button > .icon{
+	text-align: center;
+	width: 15%;
+}

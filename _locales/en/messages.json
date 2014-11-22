@@ -7,6 +7,17 @@
 	},
 	"extentionDescription": {
 		"message": "Easy image upload the Gyazo compatible server."
+	},
+	"captureCrop": {
+		"message": "Capture selected area"
+	},
+	"capturePage": {
+		"message": "Capture whole page"
+	},
+	"captureImage": {
+		"message": "Capture this image"
+	},
+	"captureOption": {
+		"message": "Settings"
 	}
-
 }

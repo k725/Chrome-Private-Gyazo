@@ -2,9 +2,113 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="options.css">
+		<title class="i18n" data-text="optionsTitle"></title>
 	</head>
 	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="jumbotron">
+						<h1 class="i18n" data-text="optionsTitle"></h1>
+						<p class="i18n" data-text="optionsTitleDescription"></p>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-lg-6">
+							<div class="page-header">
+								<h1 class="i18n" data-text="optionsServer"> <small class="i18n" data-text="optionsServerDescription"></small></h1>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label for="optionsServerUploadUrl" class="col-sm-3 control-label i18n" data-text="optionsServerUploadUrl"></label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="optionsServerUploadUrl" placeholder="https://upload.gyazo.com/upload.cgi">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="optionsServerUsername" class="col-sm-3 control-label i18n" data-text="optionsServerUsername"></label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="optionsServerUsername" placeholder="Username">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="optionsServerPassword" class="col-sm-3 control-label i18n" data-text="optionsServerPassword"></label>
+									<div class="col-sm-9">
+										<input type="password" class="form-control" id="optionsServerPassword" placeholder="Password">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="optionsServerApiKey" class="col-sm-3 control-label i18n" data-text="optionsServerApiKey"></label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="optionsServerApiKey" placeholder="API Key">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12 col-lg-6">
+							<div class="page-header">
+								<h1 class="i18n" data-text="optionOther"> <small class="i18n" data-text="optionOtherDescription"></small></h1>
+							</div>
+							<div class="form-horizontal">
+								<div class="form-group">
+									<div class="col-sm-12">
+										<label class="i18n" data-text="optionOtherClipCopyDescription"></label>
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" id="optionOtherClipCopy"> <span class="i18n" data-text="optionOtherClipCopy"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-12">
+										<label class="i18n" data-text="optionOtherUploadCompTabDescription"></label>
+										<div class="radio">
+											<label>
+												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewBackground" checked>
+												<span class="i18n" data-text="optionOtherUploadCompTabNewBackground"></span>
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewRightBackground">
+												<span class="i18n" data-text="optionOtherUploadCompTabNewRightBackground"></span>
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewOpen">
+												<span class="i18n" data-text="optionOtherUploadCompTabNewOpen"></span>
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewRightOpen">
+												<span class="i18n" data-text="optionOtherUploadCompTabNewRightOpen"></span>
+											</label>
+										</div>
+										<div class="radio">
+											<label>
+												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNoAction">
+												<span class="i18n" data-text="optionOtherUploadCompTabNoAction"></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bottomButton">
+						<button type="button" class="btn btn-success i18n" data-text="optionsSave" id="optionSave"></button>
+						<button type="button" class="btn btn-default i18n" data-text="optionsReset" id="optionReset"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/libs/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="/main/i18n.js"></script>
 		<script src="options.js"></script>
 	</body>
 </html>
