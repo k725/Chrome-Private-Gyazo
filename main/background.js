@@ -143,7 +143,7 @@ function uploadImage(data, options) {
 
 		formData.append('imagedata', toBlob(data.imageData));
 
-		ajaxObject.dataType    = 'html';
+		ajaxObject.dataType    = 'text';
 		ajaxObject.processData = false;
 		ajaxObject.contentType = false;
 		ajaxObject.data        = formData;
