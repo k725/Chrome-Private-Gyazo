@@ -4,6 +4,7 @@ Chrome-Private-Gyazo
 Private Gyazo client for Chrome
 
 Now working...
+
 Please send a pull request with translation!
 
 Thanks
