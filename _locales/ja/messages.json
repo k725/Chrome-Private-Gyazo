@@ -26,50 +26,50 @@
 	"optionsServer": {
 		"message": "サーバ設定"
 	},
-	"optionsServerDescription": {
-		"message": "アップロード先URLやユーザ名、パスワード等の設定します。"
-	},
 	"optionsServerUploadUrl": {
-		"message": "アップロードURL"
+		"message": "アップロードURL *"
 	},
 	"optionsServerUsername": {
-		"message": "ユーザ名"
+		"message": "ユーザ名 (Basic認証)"
 	},
 	"optionsServerPassword": {
-		"message": "パスワード"
+		"message": "パスワード (Basic認証)"
 	},
 	"optionsServerApiKey": {
-		"message": "APIキー"
+		"message": "Gyazo APIキー"
 	},
-	"optionOther": {
+	"optionsServerApiType": {
+		"message": "APIの種類 *"
+	},
+	"optionsServerUseBrowserSessionApi" : {
+		"message": "Upload with Browser Session APIを使用する"
+	},
+	"optionsServerUseOldApi" : {
+		"message": "古いAPIを使用する"
+	},
+	"optionsOther": {
 		"message": "その他設定"
 	},
-	"optionOtherDescription": {
-		"message": "タブの挙動やクリップボードの挙動の設定します。"
-	},
-	"optionOtherClipCopyDescription": {
+	"optionsOtherClipCopyDescription": {
 		"message": "アップロード完了時のクリップボードの挙動"
 	},
-	"optionOtherClipCopy": {
+	"optionsOtherClipCopy": {
 		"message": "アップロード完了後、URLをクリップボードにコピー"
 	},
-	"optionOtherUploadCompTabDescription": {
-		"message": "アップロード完了時のタブの挙動"
+	"optionsOtherUploadCompTabDescription": {
+		"message": "アップロード完了時のタブの挙動 *"
 	},
-	"optionOtherUploadCompTabNewBackground": {
+	"optionsOtherUploadCompTabNewBackground": {
 		"message": "新しいタブをバックグラウンドで開く"
 	},
-	"optionOtherUploadCompTabNewRightBackground": {
+	"optionsOtherUploadCompTabNewRightBackground": {
 		"message": "新しいタブを現在のタブの右にバックグラウンドで開く"
 	},
-	"optionOtherUploadCompTabNewOpen": {
+	"optionsOtherUploadCompTabNewOpen": {
 		"message": "新しいタブを開き移動する"
 	},
-	"optionOtherUploadCompTabNewRightOpen": {
+	"optionsOtherUploadCompTabNewRightOpen": {
 		"message": "新しいタブを現在のタブの右に開き移動する"
-	},
-	"optionOtherUploadCompTabNoAction": {
-		"message": "何もしない"
 	},
 	"optionsSave": {
 		"message": "保存"
@@ -79,5 +79,26 @@
 	},
 	"optionResetConfirm": {
 		"message": "保存されている設定値を全て破棄します。よろしいですか?"
+	},
+	"uploadingServerEmpty": {
+		"message": "アップロード先URL等の設定必須項目が空です。\n設定後、再度お試しください。"
+	},
+	"uploadingServer": {
+		"message": "サーバにアップロード"
+	},
+	"uploadingServerMessage": {
+		"message": "アップロード中..."
+	},
+	"uploadingServerFinish": {
+		"message": "アップロード完了"
+	},
+	"uploadingServerFinishMessage": {
+		"message": "アップロードが完了しました!"
+	},
+	"capturingWindow": {
+		"message": "キャプチャ中"
+	},
+	"capturingWindowMessage": {
+		"message": "お待ちください..."
 	}
 }

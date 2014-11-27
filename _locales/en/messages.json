@@ -17,7 +17,88 @@
 	"captureImage": {
 		"message": "Capture this image"
 	},
-	"captureOption": {
+	"optionsTitle": {
 		"message": "Settings"
+	},
+	"optionsTitleDescription": {
+		"message": "Setting for destination server and more."
+	},
+	"optionsServer": {
+		"message": "Server settings"
+	},
+	"optionsServerUploadUrl": {
+		"message": "Upload URL *"
+	},
+	"optionsServerUsername": {
+		"message": "Username (Basic Auth)"
+	},
+	"optionsServerPassword": {
+		"message": "Password (Basic Auth)"
+	},
+	"optionsServerApiKey": {
+		"message": "Gyazo API Key"
+	},
+	"optionsServerApiType": {
+		"message": "API type *"
+	},
+	"optionsServerUseBrowserSessionApi" : {
+		"message": "Use Upload with Browser Session API"
+	},
+	"optionsServerUseOldApi" : {
+		"message": "Use old type API"
+	},
+	"optionsOther": {
+		"message": "Other"
+	},
+	"optionsOtherClipCopyDescription": {
+		"message": "Clipboard behavior after upload complete"
+	},
+	"optionsOtherClipCopy": {
+		"message": "Copy to image URL after upload complete"
+	},
+	"optionsOtherUploadCompTabDescription": {
+		"message": "Tab behavior after upload complete"
+	},
+	"optionsOtherUploadCompTabNewBackground": {
+		"message": "Open a new tab in the background"
+	},
+	"optionsOtherUploadCompTabNewRightBackground": {
+		"message": "Open a new tab the right of the current tab in the background"
+	},
+	"optionsOtherUploadCompTabNewOpen": {
+		"message": "Open a new tab and move the page"
+	},
+	"optionsOtherUploadCompTabNewRightOpen": {
+		"message": "Open a new tab the right of the current tab and move the page"
+	},
+	"optionsSave": {
+		"message": "Save"
+	},
+	"optionsReset": {
+		"message": "Reset"
+	},
+	"optionResetConfirm": {
+		"message": "All settings return to default. are you sure?"
+	},
+	"uploadingServerEmpty": {
+		"message": ""
+	},
+	"uploadingServer": {
+		"message": "Upload to server"
+	},
+	"uploadingServerMessage": {
+		"message": "Progress..."
+	},
+	"uploadingServerFinish": {
+		"message": "Complete"
+	},
+	"uploadingServerFinishMessage": {
+		"message": "Upload completed!"
+	},
+	"capturingWindow": {
+		"message": "Capturing"
+	},
+	"capturingWindowMessage": {
+		"message": "Progress..."
 	}
 }

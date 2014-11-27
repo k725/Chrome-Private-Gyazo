@@ -1,21 +1,22 @@
 html, body {
-	width: 250px;
+	width: 200px;
 	padding: 0px;
 	margin: 0px;
 }
 
 div.button {
-	cursor: pointer;
-	font-size: 17px;
-	line-height: 30px;
 	height: 30px;
+	padding-left: 10px;
+	line-height: 30px;
+	cursor: pointer;
+	font-size: 14px;
 }
 
 div.button:hover {
 	background-color: #e6e6e6;
 }
 
-.button > .icon{
-	text-align: center;
-	width: 15%;
+div.button > img.icon {
+	height: 15px;
+	vertical-align: middle;
 }

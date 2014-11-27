@@ -15,14 +15,19 @@
 		"default_popup": "popup/popup.html"
 	},
 	"content_scripts": [{
-		"matches": ["<all_urls>"],
-		"js": ["main/content.js"],
+		"matches": [
+			"<all_urls>"
+		],
+		"js": [
+			"main/content.js"
+		],
 		"run_at": "document_end"
 	}],
 	"background": {
 		"scripts": [
-			"main/background.js",
-			"libs/jquery-2.1.1.min.js"
+			"libs/jquery-2.1.1.min.js",
+			"main/functions.js",
+			"main/background.js"
 		],
 		"persistent": false
 	},
@@ -40,8 +45,10 @@
 		"contextMenus",
 		"tabs",
 		"clipboardWrite",
-		"clipboardRead"
+		"clipboardRead",
+		"storage"
 	],
 	"options_page": "options/options.html",
-	"web_accessible_resources": ["jquery-2.1.1.min.map"]
+	"web_accessible_resources": [],
+	"content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'"
 }

@@ -17,91 +17,76 @@
 					<div class="row">
 						<div class="col-md-12 col-lg-6">
 							<div class="page-header">
-								<h1 class="i18n" data-text="optionsServer"> <small class="i18n" data-text="optionsServerDescription"></small></h1>
+								<h1 class="i18n" data-text="optionsServer"></h1>
 							</div>
 							<div class="form-horizontal">
 								<div class="form-group">
-									<label for="optionsServerUploadUrl" class="col-sm-3 control-label i18n" data-text="optionsServerUploadUrl"></label>
-									<div class="col-sm-9">
+									<label for="optionsServerUploadUrl" class="col-sm-4 control-label i18n" data-text="optionsServerUploadUrl"></label>
+									<div class="col-sm-8">
 										<input type="text" class="form-control" id="optionsServerUploadUrl" placeholder="https://upload.gyazo.com/upload.cgi">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="optionsServerUsername" class="col-sm-3 control-label i18n" data-text="optionsServerUsername"></label>
-									<div class="col-sm-9">
+									<label for="optionsServerUsername" class="col-sm-4 control-label i18n" data-text="optionsServerUsername"></label>
+									<div class="col-sm-8">
 										<input type="text" class="form-control" id="optionsServerUsername" placeholder="Username">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="optionsServerPassword" class="col-sm-3 control-label i18n" data-text="optionsServerPassword"></label>
-									<div class="col-sm-9">
+									<label for="optionsServerPassword" class="col-sm-4 control-label i18n" data-text="optionsServerPassword"></label>
+									<div class="col-sm-8">
 										<input type="password" class="form-control" id="optionsServerPassword" placeholder="Password">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="optionsServerApiKey" class="col-sm-3 control-label i18n" data-text="optionsServerApiKey"></label>
-									<div class="col-sm-9">
+									<label for="optionsServerApiKey" class="col-sm-4 control-label i18n" data-text="optionsServerApiKey"></label>
+									<div class="col-sm-8">
 										<input type="text" class="form-control" id="optionsServerApiKey" placeholder="API Key">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="optionsServerApiType" class="col-sm-4 control-label i18n" data-text="optionsServerApiType"></label>
+									<div class="col-sm-8">
+										<select class="form-control" id="optionsServerApiType">
+											<option class="i18n" data-text="optionsServerUseBrowserSessionApi" value="optionsServerUseBrowserSessionApi"></option>
+											<option class="i18n" data-text="optionsServerUseOldApi" value="optionsServerUseOldApi"></option>
+										</select>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12 col-lg-6">
 							<div class="page-header">
-								<h1 class="i18n" data-text="optionOther"> <small class="i18n" data-text="optionOtherDescription"></small></h1>
+								<h1 class="i18n" data-text="optionsOther"></h1>
 							</div>
 							<div class="form-horizontal">
 								<div class="form-group">
 									<div class="col-sm-12">
-										<label class="i18n" data-text="optionOtherClipCopyDescription"></label>
+										<label class="i18n" data-text="optionsOtherClipCopyDescription"></label>
 										<div class="checkbox">
 											<label>
-												<input type="checkbox" id="optionOtherClipCopy"> <span class="i18n" data-text="optionOtherClipCopy"></span>
+												<input type="checkbox" id="optionsOtherClipCopy"> <span class="i18n" data-text="optionsOtherClipCopy"></span>
 											</label>
 										</div>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-12">
-										<label class="i18n" data-text="optionOtherUploadCompTabDescription"></label>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewBackground" checked>
-												<span class="i18n" data-text="optionOtherUploadCompTabNewBackground"></span>
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewRightBackground">
-												<span class="i18n" data-text="optionOtherUploadCompTabNewRightBackground"></span>
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewOpen">
-												<span class="i18n" data-text="optionOtherUploadCompTabNewOpen"></span>
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNewRightOpen">
-												<span class="i18n" data-text="optionOtherUploadCompTabNewRightOpen"></span>
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="optionOtherUploadCompTab" id="optionOtherUploadCompTabNoAction">
-												<span class="i18n" data-text="optionOtherUploadCompTabNoAction"></span>
-											</label>
-										</div>
+										<label class="i18n" data-text="optionsOtherUploadCompTabDescription"></label>
+										<select class="form-control" id="optionsOtherUploadCompTab">
+											<option class="i18n" data-text="optionsOtherUploadCompTabNewBackground" value="optionsOtherUploadCompTabNewBackground"></option>
+											<option class="i18n" data-text="optionsOtherUploadCompTabNewRightBackground" value="optionsOtherUploadCompTabNewRightBackground"></option>
+											<option class="i18n" data-text="optionsOtherUploadCompTabNewOpen" value="optionsOtherUploadCompTabNewOpen"></option>
+											<option class="i18n" data-text="optionsOtherUploadCompTabNewRightOpen" value="optionsOtherUploadCompTabNewRightOpen"></option>
+										</select>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="bottomButton">
-						<button type="button" class="btn btn-success i18n" data-text="optionsSave" id="optionSave"></button>
-						<button type="button" class="btn btn-default i18n" data-text="optionsReset" id="optionReset"></button>
+						<a class="btn btn-success" id="optionsSave"><span class="glyphicon glyphicon-floppy-disk"></span> <span class="i18n" data-text="optionsSave"></span></a>
+						<a class="btn btn-default" id="optionsReset"><span class="glyphicon glyphicon-trash"></span> <span class="i18n" data-text="optionsReset"></span></a>
 					</div>
 				</div>
 			</div>
