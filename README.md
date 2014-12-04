@@ -16,5 +16,5 @@ Thanks
 License
 -------
 
-This software is licensed under the MIT/X11 License.
+This software is licensed under the MIT/X11 License.  
 See LICENSE file for more detail.
