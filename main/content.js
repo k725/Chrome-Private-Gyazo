@@ -140,18 +140,30 @@
 				window.scroll(0, 0);
 
 				var zoom = Math.round(window.outerWidth / window.innerWidth * 100) / 100,
-				    data = {
-						width             : window.outerWidth,
-						height            : Math.max(document.body.clientHeight, document.body.offsetHeight, document.body.scrollHeight),
-						windowInnerHeight : window.innerHeight,
-						title             : document.title,
-						url               : location.href,
-						captureTop        : 0,
-						captureButtom     : window.innerHeight * zoom,
-						scrollPositionY   : 0,
-						scale             : window.devicePixelRatio / zoom,
-						zoom              : zoom
-					};
+				    windowInnerHeight = window.innerHeight,
+				    isWindows         = navigator.platform.match(/^win/i),
+				    isMaximum         = (window.outerHeight === screen.availHeight && window.outerWidth === screen.availWidth);
+				console.log(zoom);
+				console.log(isWindows);
+				console.log(isMaximum);
+				if (isWindows && !isMaximum && 1.00 < zoom && zoom < 1.05) {
+					zoom = 1.00;
+				}
+
+				console.log(zoom);
+
+				var data = {
+					width             : window.outerWidth,
+					height            : Math.max(document.body.clientHeight, document.body.offsetHeight, document.body.scrollHeight),
+					windowInnerHeight : window.innerHeight,
+					title             : document.title,
+					url               : location.href,
+					captureTop        : 0,
+					captureButtom     : window.innerHeight * zoom,
+					scrollPositionY   : 0,
+					scale             : window.devicePixelRatio / zoom,
+					zoom              : zoom
+				};
 
 				//waiting for repaint after scroll
 				window.setTimeout(function() {
