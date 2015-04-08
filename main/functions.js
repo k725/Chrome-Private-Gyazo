@@ -46,7 +46,7 @@ var canvasUtils = {
 		imageLoader(canvasData, function(img) {
 			ctx.drawImage(img, 0, 0);
 			imageLoader(imageSrc, function(img) {
-				ctx.drawImage(img, 0, 0, width * scale, imageHeight * scale, 0, top, width * scale, imageHeight * scale);
+				ctx.drawImage(img, 0, 0, width * scale, imageHeight * scale, 0, top, width, imageHeight);
 				callback(canvas);
 			});
 		});
@@ -55,10 +55,10 @@ var canvasUtils = {
 		var scale     = argObj.scale  || 1.0,
 		    zoom      = argObj.zoom || 1.0,
 		    imageData = argObj.imageData,
-		    startX    = argObj.startX * zoom,
-		    startY    = argObj.startY * zoom,
-		    width     = argObj.width * zoom,
-		    height    = argObj.height * zoom,
+		    startX    = argObj.startX * scale,
+		    startY    = argObj.startY * scale,
+		    width     = argObj.width * scale,
+		    height    = argObj.height * scale,
 		    callback  = argObj.callback || function(){};
 
 		if (typeof imageData === 'string' && imageData.substr(0, 5) === 'data:') {
