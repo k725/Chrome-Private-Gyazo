@@ -15,6 +15,7 @@
 				var data           = {},
 				    tempUserSelect = document.body.style.webkitUserSelect,
 				    layer          = document.createElement('div'),
+				    pageHeight     = Math.max(document.body.clientHeight, document.body.offsetHeight, document.body.scrollHeight),
 				    startX,
 				    startY;
 
@@ -22,7 +23,7 @@
 				layer.style.left     = document.body.clientLeft + 'px';
 				layer.style.top      = document.body.clientTop + 'px';
 				layer.style.width    = document.body.clientWidth + 'px';
-				layer.style.height   = document.body.clientHeight + 'px';
+				layer.style.height   = pageHeight + 'px';
 				layer.style.zIndex   = 2147483647; //Maximun number of 32bit Int
 				layer.style.cursor   = 'crosshair';
 
