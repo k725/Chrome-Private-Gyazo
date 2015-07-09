@@ -217,6 +217,16 @@ function uploadImage(data, options) {
 function onClickHandler(info, tab) {
 	var GyazoFuncs = {
 		gyazoIt : function() {
+			if (info.srcUrl.match(/^data:/)) {
+				postToGyazo({
+					imageData : info.srcUrl,
+					title     : tab.title,
+					url       : tab.url
+				});
+
+				return;
+			}
+
 			var xhr = $.ajaxSettings.xhr();
 
 			xhr.open('GET', info.srcUrl, true);
