@@ -289,22 +289,20 @@ function onClickHandler(info, tab) {
 
 chrome.contextMenus.onClicked.addListener(onClickHandler);
 
-chrome.runtime.onInstalled.addListener(function() {
-	chrome.contextMenus.create({
-		title    : chrome.i18n.getMessage('captureImage'),
-		id       : 'gyazoIt',
-		contexts : ['image']
-	});
-	chrome.contextMenus.create({
-		title    : chrome.i18n.getMessage('captureCrop'),
-		id       : 'gyazoCapture',
-		contexts : ['all']
-	});
-	chrome.contextMenus.create({
-		title    : chrome.i18n.getMessage('capturePage'),
-		id       : 'gyazoWhole',
-		contexts : ['all']
-	});
+chrome.contextMenus.create({
+	title    : chrome.i18n.getMessage('captureImage'),
+	id       : 'gyazoIt',
+	contexts : ['image']
+});
+chrome.contextMenus.create({
+	title    : chrome.i18n.getMessage('captureCrop'),
+	id       : 'gyazoCapture',
+	contexts : ['all']
+});
+chrome.contextMenus.create({
+	title    : chrome.i18n.getMessage('capturePage'),
+	id       : 'gyazoWhole',
+	contexts : ['all']
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
