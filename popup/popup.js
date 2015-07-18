@@ -5,7 +5,8 @@ $(function() {
 			active        : true
 		},
 		function(tabs) {
-			chrome.tabs.sendMessage(tabs[0].id, {
+			chrome.runtime.sendMessage(chrome.runtime.id, {
+				tab : tabs[0],
 				action : 'gyazoCapture'
 			}, function(mes){});
 			window.close();

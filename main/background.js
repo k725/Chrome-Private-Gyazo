@@ -279,7 +279,11 @@ function onClickHandler(info, tab) {
 	};
 
 	if(info.menuItemId in GyazoFuncs) {
-		GyazoFuncs[info.menuItemId]();
+		chrome.tabs.executeScript(null, {
+			file: './content.js'
+		}, function() {
+			GyazoFuncs[info.menuItemId]();
+		});
 	}
 }
 
@@ -305,6 +309,11 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	var messageHandlers = {
+		gyazoCapture: function() {
+			onClickHandler({
+				menuItemId : 'gyazoCapture'
+			}, request.tab);
+		},
 		gyazoWholeCaptureFromPopup: function() {
 			onClickHandler({
 				menuItemId : 'gyazoWhole'

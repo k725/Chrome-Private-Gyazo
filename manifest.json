@@ -14,15 +14,6 @@
 		"default_title": "__MSG_extentionShortName__",
 		"default_popup": "popup/popup.html"
 	},
-	"content_scripts": [{
-		"matches": [
-			"<all_urls>"
-		],
-		"js": [
-			"main/content.js"
-		],
-		"run_at": "document_end"
-	}],
 	"background": {
 		"scripts": [
 			"libs/jquery-2.1.3.min.js",
