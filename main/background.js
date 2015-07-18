@@ -280,7 +280,7 @@ function onClickHandler(info, tab) {
 
 	if(info.menuItemId in GyazoFuncs) {
 		chrome.tabs.executeScript(null, {
-			file: './content.js'
+			file: '/main/content.js'
 		}, function() {
 			GyazoFuncs[info.menuItemId]();
 		});
