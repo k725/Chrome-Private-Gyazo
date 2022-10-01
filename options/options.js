@@ -1,20 +1,16 @@
-$(function() {
+$(() => {
 	// Value restore
 	chrome.storage.sync.get([
 		'optionsServerUploadUrl',
 		'optionsServerUsername',
 		'optionsServerPassword',
-		'optionsServerApiKey',
-		'optionsServerApiType',
 		'optionsOtherClipCopy',
 		'optionsOtherUploadCompTab'
-	], function(items) {
-		if(chrome.extension.lastError === void 0) {
+	], (items) => {
+		if (chrome.extension.lastError === void 0) {
 			$('#optionsServerUploadUrl').val(items.optionsServerUploadUrl || '');
 			$('#optionsServerUsername').val(items.optionsServerUsername || '');
 			$('#optionsServerPassword').val(items.optionsServerPassword || '');
-			$('#optionsServerApiKey').val(items.optionsServerApiKey || '');
-			$('#optionsServerApiType').val(items.optionsServerApiType || 'optionsServerUseOldApi');
 			$('#optionsOtherClipCopy').attr('checked', items.optionOtherClipCopy || true);
 			$('#optionsOtherUploadCompTab').val(items.optionOtherUploadCompTab || 'optionsOtherUploadCompTabNewBackground');
 		} else {
@@ -23,7 +19,7 @@ $(function() {
 	});
 
 	// Value save
-	$('#optionsSave').click(function() {
+	$('#optionsSave').click(() => {
 		var optionsServerUploadUrl = $('#optionsServerUploadUrl');
 
 		// Todo: Bad Regular expression :P
@@ -33,15 +29,13 @@ $(function() {
 		}
 
 		chrome.storage.sync.set({
-			'optionsServerUploadUrl'    : optionsServerUploadUrl.val(),
-			'optionsServerUsername'     : $('#optionsServerUsername').val(),
-			'optionsServerPassword'     : $('#optionsServerPassword').val(),
-			'optionsServerApiKey'       : $('#optionsServerApiKey').val(),
-			'optionsServerApiType'      : $('#optionsServerApiType').val(),
-			'optionsOtherClipCopy'      : $('#optionsOtherClipCopy').prop('checked'),
-			'optionsOtherUploadCompTab' : $('#optionsOtherUploadCompTab').val()
-		}, function() {
-			if(chrome.extension.lastError === void 0) {
+			'optionsServerUploadUrl': optionsServerUploadUrl.val(),
+			'optionsServerUsername': $('#optionsServerUsername').val(),
+			'optionsServerPassword': $('#optionsServerPassword').val(),
+			'optionsOtherClipCopy': $('#optionsOtherClipCopy').prop('checked'),
+			'optionsOtherUploadCompTab': $('#optionsOtherUploadCompTab').val()
+		}, () => {
+			if (chrome.extension.lastError === void 0) {
 				window.close();
 			} else {
 				window.alert(chrome.extension.lastError);
@@ -50,9 +44,9 @@ $(function() {
 	});
 
 	// Value clear
-	$('#optionsReset').click(function() {
+	$('#optionsReset').click(() => {
 		if (window.confirm(chrome.i18n.getMessage('optionResetConfirm'))) {
-			chrome.storage.sync.clear(function() {
+			chrome.storage.sync.clear(() => {
 				if (chrome.extension.lastError !== void 0) {
 					window.alert(chrome.extension.lastError);
 				}

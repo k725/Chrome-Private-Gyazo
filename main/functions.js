@@ -1,106 +1,98 @@
-function imageLoader(imgSrc, callback) {
-	var img = new Image();
+const imageLoader = (imgSrc) => {
+	return new Promise((resolve, reject) => {
+		fetch(imgSrc).then(res => res.blob()).then(blob => {
+			createImageBitmap(blob).then(r => resolve(r)).catch(r => reject(r));
+		});
+	});
+};
 
-	img.src    = imgSrc;
-	img.onload = function() {
-		callback(img);
-	};
-}
+export const canvasToBase64 = async (canvas) => {
+	const blob = await canvas.convertToBlob();
+	return new Promise((resove, reason) => {
+		const reader = new FileReader();
+		reader.onload = () => {
+			resove('data:image/png;base64,' + reader.result.split(',')[1]);
+		};
+		reader.readAsDataURL(blob);
+	});
+};
 
-function saveToClipboard(str) {
-	var textArea = document.createElement('textarea');
+export const toBlob = (base64) => {
+	const binary = atob(base64.replace(/^.*,/, ''));
 
-	textArea.style.cssText = 'position:absolute;left:-100%';
-	textArea.value         = str;
+	let buffer = new Uint8Array(binary.length);
+	for (let i = 0; i < binary.length; i++) {
+		buffer[i] = binary.charCodeAt(i);
+	}
 
-	document.body.appendChild(textArea);
-	textArea.select();
-	document.execCommand('copy');
-	document.body.removeChild(textArea);
-}
+	return new Blob([buffer.buffer], {
+		type: 'image/png',
+	});
+};
 
-var canvasUtils = {
-	appendImageToCanvas: function(argObj) {
-		var scale       = argObj.scale || 1.0,
-		    zoom        = argObj.zoom || 1.0,
-		    canvasData  = argObj.canvasData,
-		    imageSrc    = argObj.imageSrc,
-		    pageHeight  = argObj.pageHeight * zoom,
-		    imageHeight = argObj.imageHeight,
-		    width       = argObj.width,
-		    top         = argObj.top,
-		    callback    = argObj.callback;
+export const getCurrentTabId = async () => {
+	const [tab] = await chrome.tabs.query({
+		currentWindow: true,
+		active: true,
+	});
+	return tab.id;
+};
+
+export const saveToClipboard = async (str) => {
+	const tabId = await getCurrentTabId();
+	chrome.scripting.executeScript({
+		target: { tabId: tabId },
+		func: (str) => navigator.clipboard.writeText(str),
+		args: [str],
+	});
+};
+
+export const canvasUtils = {
+	appendImageToCanvas: async function (argObj) {
+		let scale = argObj.scale || 1.0,
+			zoom = argObj.zoom || 1.0,
+			canvasData = argObj.canvasData,
+			imageSrc = argObj.imageSrc,
+			pageHeight = argObj.pageHeight * zoom,
+			imageHeight = argObj.imageHeight,
+			width = argObj.width,
+			top = argObj.top,
+			callback = argObj.callback;
 
 		// If 1st argument is Object (maybe <canvas>), convert to dataURL.
 		if (typeof canvasData === 'object') {
-			canvasData = canvasData.toDataURL();
+			canvasData = await canvasToBase64(canvasData.getContext('2d').canvas);
 		}
 
-		var canvas = document.createElement('canvas');
+		const offcan = new OffscreenCanvas(width, pageHeight);
+		const ctx = offcan.getContext('2d');
 
-		canvas.width  = width;
-		canvas.height = pageHeight;
+		const image = await imageLoader(canvasData);
+		ctx.drawImage(image, 0, 0);
 
-		var ctx = canvas.getContext('2d');
+		const image2 = await imageLoader(imageSrc);
+		ctx.drawImage(image2, 0, 0, width * scale, imageHeight * scale, 0, top, width, imageHeight);
 
-		imageLoader(canvasData, function(img) {
-			ctx.drawImage(img, 0, 0);
-			imageLoader(imageSrc, function(img) {
-				ctx.drawImage(img, 0, 0, width * scale, imageHeight * scale, 0, top, width, imageHeight);
-				callback(canvas);
-			});
-		});
+		callback(offcan);
 	},
-	trimImage: function(argObj) {
-		var scale     = argObj.scale  || 1.0,
-		    zoom      = argObj.zoom || 1.0,
-		    imageData = argObj.imageData,
-		    startX    = argObj.startX * scale,
-		    startY    = argObj.startY * scale,
-		    width     = argObj.width * scale,
-		    height    = argObj.height * scale,
-		    callback  = argObj.callback || function(){};
+	trimImage: async (argObj) => {
+		const scale = argObj.scale || 1.0,
+			imageData = argObj.imageData,
+			startX = argObj.startX * scale,
+			startY = argObj.startY * scale,
+			width = argObj.width * scale,
+			height = argObj.height * scale,
+			callback = argObj.callback || function () { };
 
-		if (typeof imageData === 'string' && imageData.substr(0, 5) === 'data:') {
-			imageLoader(imageData, function(img) {
+		if (typeof imageData === 'string' && imageData.startsWith('data:')) {
+			const image = await imageLoader(imageData);
 
-				var canvas = document.createElement('canvas');
+			const offcan = new OffscreenCanvas(width, height);
 
-				canvas.width  = width;
-				canvas.height = height;
+			const ctx = offcan.getContext('2d');
 
-				var ctx = canvas.getContext('2d');
-
-				ctx.drawImage(img, startX, startY, width, height, 0, 0, width, height);
-				callback(canvas);
-			});
-		} else if (typeof imageData === 'object') {
-			//maybe <canvas>
-			this.appendImageToCanvas({
-				canvasData  : document.createElement('canvas'),
-				imageSrc    : imageData,
-				pageHeight  : height,
-				imageHeight : height,
-				width       : width,
-				top         : 0,
-				scale       : scale,
-				zoom        : zoom,
-				callback    : function(canvas) {
-					var ctx            = canvas.getContext('2d'),
-					    originalWidth  = width,
-					    originalHeight = height;
-
-					startX *= scale;
-					startY *= scale;
-					height *= scale * zoom;
-					width  *= scale * zoom;
-
-					imageLoader(canvas.toDataURL('image/png'), function(img) {
-						ctx.drawImage(img, startX, startY, width, height, 0, 0, originalWidth, originalHeight);
-						callback(canvas);
-					});
-				}
-			});
+			ctx.drawImage(image, startX, startY, width, height, 0, 0, width, height);
+			callback(offcan);
 		}
-	}
-}
+	},
+};

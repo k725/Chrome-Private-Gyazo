@@ -38,15 +38,6 @@
 	"optionsServerApiKey": {
 		"message": "Gyazo API Key"
 	},
-	"optionsServerApiType": {
-		"message": "API type *"
-	},
-	"optionsServerUseBrowserSessionApi" : {
-		"message": "Use Upload with Browser Session API"
-	},
-	"optionsServerUseOldApi" : {
-		"message": "Use old type API"
-	},
 	"optionsOther": {
 		"message": "Other"
 	},

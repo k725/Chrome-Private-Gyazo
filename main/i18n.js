@@ -1,6 +1,5 @@
-$(function() {
-	$('.i18n').each(function() {
-		var i18n = this;
-		$(i18n).text(chrome.i18n.getMessage($(i18n).data('text')));
+document.addEventListener('DOMContentLoaded', () => {
+	document.querySelectorAll('.i18n').forEach(elm => {
+		elm.innerText = chrome.i18n.getMessage(elm.dataset.text);
 	});
 });
